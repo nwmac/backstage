@@ -4,4 +4,4 @@ name: rancher-developer-portal
 description: Rancher Developer Portal powered by Backstage
 type: application
 version: 0.1.0
-icon: https://raw.githubusercontent.com/nwmac/portal/refs/heads/main/icon.svg
+icon: https://raw.githubusercontent.com/nwmac/backstage/refs/heads/main/icon.svg

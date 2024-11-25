@@ -20,7 +20,7 @@ VERSION=0.1.0
 
 helm package ${BASE_DIR}/helm/chart --version=${VERSION} --app-version=${VERSION} -d ${BASE_DIR}/charts
 
-BASE_URL=https://raw.githubusercontent.com/nwmac/portal/refs/heads/main/charts
+BASE_URL=https://raw.githubusercontent.com/nwmac/backstage/refs/heads/main/charts
 
 helm repo index ${BASE_DIR}/charts --url=${BASE_URL}
 mv ${BASE_DIR}/charts/index.yaml ${BASE_DIR}/index.yaml
