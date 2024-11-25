@@ -26,5 +26,5 @@ spec:
             key: serverUrl
         - name: BS_K8S_TOKEN:
           valueFrom:
-            secretKeyRef: portal-app-token
+            secretKeyRef: portal-token
             key: token

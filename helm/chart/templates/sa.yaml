@@ -2,8 +2,16 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: backstage-read-only
+  name: portal-read-only
 rules:
+  - apiGroups:
+      - 'management.cattle.io'
+    resources:
+      - '*'
+    verbs:
+      - get
+      - list
+      - watch
   - apiGroups:
       - '*'
     resources:
@@ -42,27 +50,27 @@ rules:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: backstage
-  namespace: default
+  name: portal
+  namespace: cattle-portal
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: backstage-read-only-binding
+  name: portal-read-only-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: backstage-read-only
+  name: portal-read-only
 subjects:
 - kind: ServiceAccount
-  name: backstage
-  namespace: default
+  name: portal
+  namespace: cattle-portal
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: backstage-token
-  namespace: default
+  name: portal-token
+  namespace: cattle-portal
   annotations:
-    kubernetes.io/service-account.name: backstage
+    kubernetes.io/service-account.name: portal
 type: kubernetes.io/service-account-token
