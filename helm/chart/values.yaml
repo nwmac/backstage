@@ -1,0 +1,11 @@
+# Helm Chart Values for Rancher Developer Portal
+
+# Name
+
+# Namespace
+
+# Others
+
+rancher:
+  # Required - Rancher Server URL
+  serverUrl: https://127.0.0.1

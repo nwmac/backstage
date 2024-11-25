@@ -1,0 +1,34 @@
+nav hr {
+  background: #DCDEE7 !important;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a span {
+  font-weight: normal !important;
+}
+
+nav > div > div {
+  border-right: 1px solid #DCDEE7;
+}
+
+main > header {
+  border-bottom: 1px solid #DCDEE7;
+  background-color: #fff;
+}
+
+button.search-icon span {
+  font-weight: normal;
+}
+
+table svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+table button svg {
+  width: 1em !important;
+  height: 1em !important;
+}

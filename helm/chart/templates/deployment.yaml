@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher-developer-portal
+  namespace: cattle-portal
+  labels:
+    app: rancher-developer-portal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher-developer-portal
+  template:
+    metadata:
+      labels:
+        app: rancher-developer-portal
+    spec:
+      # serviceAccountName: suse-manager-service-account
+      containers:
+      - image: nwmac/portal
+        name: rancher-developer-portal
+        env:
+        - name: BS_SERVER_URL:
+          valueFrom:
+            secretKeyRef: portal-app-config
+            key: serverUrl
+        - name: BS_K8S_TOKEN:
+          valueFrom:
+            secretKeyRef: portal-app-token
+            key: token

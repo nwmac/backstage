@@ -1,0 +1,218 @@
+app:
+  title: Rancher Developer Portal
+  baseUrl: https://127.0.0.1:3000/backstage
+  https:
+    certificate:
+      cert: |
+        -----BEGIN CERTIFICATE-----
+        MIIDBjCCAe4CCQCir/8eGDIE/jANBgkqhkiG9w0BAQsFADBFMQswCQYDVQQGEwJH
+        QjETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0
+        cyBQdHkgTHRkMB4XDTE3MDQxMDExNDcyNloXDTI3MDQwODExNDcyNlowRTELMAkG
+        A1UEBhMCR0IxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0
+        IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+        AMRLR2crKB4X/9pM3gR641iDscZWW3aqo70nUDxzo5Bhk8uupqz0EfdRoCLCUeQi
+        xVp3HJ1HqnilMW7dETGGkDHKdxJRjrkBrYHhE3Kw/LCC4tEb400F6Ikm6OudVPIB
+        P+CuwfNAw70KHSx/CtIrbTz0HhDC6XN0azp39pDLRBnWWluz3iU+rFLMx7YT2Q8k
+        1nQAwcXkzLjeU7txAt2pYGQUgvBQETO5RI7QQ0CmwaV4gfHWGABBTX34WQun7g1Q
+        YukrG3/4fVeNLzGW787FKCvL07BTymJTwXXbTTPXg4chw9p+YkLLPrr+AOVe/PF1
+        MJppDT3gKdKMHFo3vMycUf0CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAEVmUYRrT
+        fCQmBDox3evqj4n8dJVStjgdw/7BPkm49SmGtaxsST/eUSGwT7dTvZBLov6BK/OW
+        +arhHZIvUY/DXlsV4NfCM4TK8KVefrwgd8ZsfQJW73L+FB0IOAY/6s+YKHm/wQGF
+        ptSOycJvEltsqfIegtYcvvD6c6SkSOvqApaF+Ai10+yiLe20KyOvM3PefZLV7mFE
+        0zCNyglZ75HftvHHV0wh82T2Et/R+txH+6dTwh065Dd6rrDzljtcAd2HC7B26ERK
+        dA2zJd9Y4eMz8osacmG/afVuR9rqtFGwdyZ1Kb5xQRzGWlrjvSmAFUx9W9iA4Ilv
+        3+56a5njSTFYKw==
+        -----END CERTIFICATE-----
+
+      key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEogIBAAKCAQEAxEtHZysoHhf/2kzeBHrjWIOxxlZbdqqjvSdQPHOjkGGTy66m
+        rPQR91GgIsJR5CLFWnccnUeqeKUxbt0RMYaQMcp3ElGOuQGtgeETcrD8sILi0Rvj
+        TQXoiSbo651U8gE/4K7B80DDvQodLH8K0ittPPQeEMLpc3RrOnf2kMtEGdZaW7Pe
+        JT6sUszHthPZDyTWdADBxeTMuN5Tu3EC3algZBSC8FARM7lEjtBDQKbBpXiB8dYY
+        AEFNffhZC6fuDVBi6Ssbf/h9V40vMZbvzsUoK8vTsFPKYlPBddtNM9eDhyHD2n5i
+        Qss+uv4A5V788XUwmmkNPeAp0owcWje8zJxR/QIDAQABAoIBADbeT/wvnQwkazkL
+        CXg5HXltfnDRTMmz0wcZiR0MueiuzdA+ZoqrwqXeJCPzK07YxU+PQelY0fbdPh8e
+        HiM42O+CB5yQPZPLO0O1tWj2vftc6qfG4tdx0lkcDjlmBguLe96DGuWy8cPSousA
+        K/cpemRyXEEVKopCPYLfa4V3u/Z4be2U/39KNjVkHFhSdSYQl6ferhEfUPwTPi7O
+        7l1/QUBabqN5FzNc2TeMVhhcJkXtYqF3RxGsaRfT0lK/j2hpbX7Bn2T0CfA/40jY
+        2OCERqFPfZWx/ShTT52b3fyX/FEua7Nukq/MZdYZou63dDIjCQQyTJSflX6lVojO
+        SuUoumECgYEA6CSkLiKcRLlTfec3LkjqkWtXR5ibL33g/H1fsZEQKFOyMbIXpUkX
+        Hybpku8NGeetjKynO3yRirp+NiBHGPn3cHc9WJ5GGG1ew9hRQ9QzyC3Tit15TDbu
+        J8i50/MaQHZSiUCnPQ/ceIZCNz8STcsEz87o/7utRLJKOvIIAPj+/8kCgYEA2Hd/
+        v5oUroMRbtzPtMJDMHiGEQyNxEGDNqcuxgXSmiEEqPLfk2qR3yLffzA9UQOg4wkX
+        /dSXsyomPriKWTvADXu1lNdkPGmW/1tk+onnHu6qgOalva30ZKhtteVjUqxEJEke
+        mHhNHyIVuj6lExLw9LZhVvzoOi+aj4AD+DRS4pUCgYBEtuveOCJ3eUAMiY9c5PqB
+        9vsL11FAOouJUXcs8VqOBVA+w4+aPktYzkTfWGFRZLGLbWPHCPVv0gof7Wf+Laef
+        o7wF6junaWBeqj5LzJlTTLVMaohIFg5iuli/Mzt3D08ZD4kxWuuQxXT+M24wlsKi
+        3IU9hYkhR4EPd6sE1q9seQKBgEpQRBAgModywbJgpgH1SyHBzqzdtXGx1/0USg97
+        gkCdoz7pGm4+gNOs4jOE+Rft+fbXcWAX8vh0OOsBaaWWyKkYVk9B3syKp2cFFlaY
+        rzrETs6v4CiNJsDDvd5bYMzKDR6z54gKjNdqWTE2Pm+c6hHo5uP5MTSAkTxAg5xb
+        QjU9AoGAaYPXlm3IKVO12FgNg/ffduooi0PKa1yRNJGnhpQKNvBQXs8eV+CQ83aK
+        kQHUExuJDrOfsC2iwF/2ZywXhEfbhL7ar0aw5zrhV+r7qvYFWxu/YoLoNVMDByw5
+        wAN0oIbsGWYmtIIti8+b9IcacTbAZ79ctlTLb1HCyPMosHxDkv8=
+        -----END RSA PRIVATE KEY-----
+
+organization:
+  name: Rancher
+
+backend:
+  # Used for enabling authentication, secret is shared by all backend plugins
+  # See https://backstage.io/docs/auth/service-to-service-auth for
+  # information on the format
+  # auth:
+  #   keys:
+  #     - secret: ${BACKEND_SECRET}
+  baseUrl: https://127.0.0.1:7007
+  listen: ':7007'
+    # Uncomment the following host directive to bind to specific interfaces
+    # host: 127.0.0.1
+
+  https:
+    certificate:
+      cert: |
+        -----BEGIN CERTIFICATE-----
+        MIIDBjCCAe4CCQCir/8eGDIE/jANBgkqhkiG9w0BAQsFADBFMQswCQYDVQQGEwJH
+        QjETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0
+        cyBQdHkgTHRkMB4XDTE3MDQxMDExNDcyNloXDTI3MDQwODExNDcyNlowRTELMAkG
+        A1UEBhMCR0IxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0
+        IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+        AMRLR2crKB4X/9pM3gR641iDscZWW3aqo70nUDxzo5Bhk8uupqz0EfdRoCLCUeQi
+        xVp3HJ1HqnilMW7dETGGkDHKdxJRjrkBrYHhE3Kw/LCC4tEb400F6Ikm6OudVPIB
+        P+CuwfNAw70KHSx/CtIrbTz0HhDC6XN0azp39pDLRBnWWluz3iU+rFLMx7YT2Q8k
+        1nQAwcXkzLjeU7txAt2pYGQUgvBQETO5RI7QQ0CmwaV4gfHWGABBTX34WQun7g1Q
+        YukrG3/4fVeNLzGW787FKCvL07BTymJTwXXbTTPXg4chw9p+YkLLPrr+AOVe/PF1
+        MJppDT3gKdKMHFo3vMycUf0CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAEVmUYRrT
+        fCQmBDox3evqj4n8dJVStjgdw/7BPkm49SmGtaxsST/eUSGwT7dTvZBLov6BK/OW
+        +arhHZIvUY/DXlsV4NfCM4TK8KVefrwgd8ZsfQJW73L+FB0IOAY/6s+YKHm/wQGF
+        ptSOycJvEltsqfIegtYcvvD6c6SkSOvqApaF+Ai10+yiLe20KyOvM3PefZLV7mFE
+        0zCNyglZ75HftvHHV0wh82T2Et/R+txH+6dTwh065Dd6rrDzljtcAd2HC7B26ERK
+        dA2zJd9Y4eMz8osacmG/afVuR9rqtFGwdyZ1Kb5xQRzGWlrjvSmAFUx9W9iA4Ilv
+        3+56a5njSTFYKw==
+        -----END CERTIFICATE-----
+
+      key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEogIBAAKCAQEAxEtHZysoHhf/2kzeBHrjWIOxxlZbdqqjvSdQPHOjkGGTy66m
+        rPQR91GgIsJR5CLFWnccnUeqeKUxbt0RMYaQMcp3ElGOuQGtgeETcrD8sILi0Rvj
+        TQXoiSbo651U8gE/4K7B80DDvQodLH8K0ittPPQeEMLpc3RrOnf2kMtEGdZaW7Pe
+        JT6sUszHthPZDyTWdADBxeTMuN5Tu3EC3algZBSC8FARM7lEjtBDQKbBpXiB8dYY
+        AEFNffhZC6fuDVBi6Ssbf/h9V40vMZbvzsUoK8vTsFPKYlPBddtNM9eDhyHD2n5i
+        Qss+uv4A5V788XUwmmkNPeAp0owcWje8zJxR/QIDAQABAoIBADbeT/wvnQwkazkL
+        CXg5HXltfnDRTMmz0wcZiR0MueiuzdA+ZoqrwqXeJCPzK07YxU+PQelY0fbdPh8e
+        HiM42O+CB5yQPZPLO0O1tWj2vftc6qfG4tdx0lkcDjlmBguLe96DGuWy8cPSousA
+        K/cpemRyXEEVKopCPYLfa4V3u/Z4be2U/39KNjVkHFhSdSYQl6ferhEfUPwTPi7O
+        7l1/QUBabqN5FzNc2TeMVhhcJkXtYqF3RxGsaRfT0lK/j2hpbX7Bn2T0CfA/40jY
+        2OCERqFPfZWx/ShTT52b3fyX/FEua7Nukq/MZdYZou63dDIjCQQyTJSflX6lVojO
+        SuUoumECgYEA6CSkLiKcRLlTfec3LkjqkWtXR5ibL33g/H1fsZEQKFOyMbIXpUkX
+        Hybpku8NGeetjKynO3yRirp+NiBHGPn3cHc9WJ5GGG1ew9hRQ9QzyC3Tit15TDbu
+        J8i50/MaQHZSiUCnPQ/ceIZCNz8STcsEz87o/7utRLJKOvIIAPj+/8kCgYEA2Hd/
+        v5oUroMRbtzPtMJDMHiGEQyNxEGDNqcuxgXSmiEEqPLfk2qR3yLffzA9UQOg4wkX
+        /dSXsyomPriKWTvADXu1lNdkPGmW/1tk+onnHu6qgOalva30ZKhtteVjUqxEJEke
+        mHhNHyIVuj6lExLw9LZhVvzoOi+aj4AD+DRS4pUCgYBEtuveOCJ3eUAMiY9c5PqB
+        9vsL11FAOouJUXcs8VqOBVA+w4+aPktYzkTfWGFRZLGLbWPHCPVv0gof7Wf+Laef
+        o7wF6junaWBeqj5LzJlTTLVMaohIFg5iuli/Mzt3D08ZD4kxWuuQxXT+M24wlsKi
+        3IU9hYkhR4EPd6sE1q9seQKBgEpQRBAgModywbJgpgH1SyHBzqzdtXGx1/0USg97
+        gkCdoz7pGm4+gNOs4jOE+Rft+fbXcWAX8vh0OOsBaaWWyKkYVk9B3syKp2cFFlaY
+        rzrETs6v4CiNJsDDvd5bYMzKDR6z54gKjNdqWTE2Pm+c6hHo5uP5MTSAkTxAg5xb
+        QjU9AoGAaYPXlm3IKVO12FgNg/ffduooi0PKa1yRNJGnhpQKNvBQXs8eV+CQ83aK
+        kQHUExuJDrOfsC2iwF/2ZywXhEfbhL7ar0aw5zrhV+r7qvYFWxu/YoLoNVMDByw5
+        wAN0oIbsGWYmtIIti8+b9IcacTbAZ79ctlTLb1HCyPMosHxDkv8=
+        -----END RSA PRIVATE KEY-----
+  
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+  cors:
+    origin: https://127.0.0.1:8005
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+  # This is for local development only, it is not recommended to use this in production
+  # The production database configuration is stored in app-config.production.yaml
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+  # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+
+integrations:
+  github:
+    - host: github.com
+      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+      # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
+      # token:
+
+proxy:
+  ### Example for how to add a proxy endpoint for the frontend.
+  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
+  # endpoints:
+  #   '/test':
+  #     target: 'https://example.com'
+  #     changeOrigin: true
+
+# Reference documentation http://backstage.io/docs/features/techdocs/configuration
+# Note: After experimenting with basic setup, use CI/CD to generate docs
+# and an external cloud storage when deploying TechDocs for production use-case.
+# https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
+techdocs:
+  builder: 'local' # Alternatives - 'external'
+  generator:
+    runIn: 'docker' # Alternatives - 'local'
+  publisher:
+    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+
+auth:
+  # see https://backstage.io/docs/auth/ to learn about auth providers
+  providers:
+    rancher:
+      signIn:
+        resolvers:
+          - resolver: idMatchingUserEntityAnnotation
+
+scaffolder:
+  # see https://backstage.io/docs/features/software-templates/configuration for software template options
+
+catalog:
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+
+  providers:
+    rancher:
+      local:
+        #serverUrl: RANCHER LOCAL SERVER URL
+        #token: TOKEN
+        schedule: # same options as in SchedulerServiceTaskScheduleDefinition
+          #initialDelay: { seconds: 90 }
+          frequency: { seconds: 30 }
+          timeout: { seconds: 10 }
+  
+  rules:
+    - allow: [Component, System, API, Resource, Location]
+  locations:
+    ## Uncomment these lines to add more example data
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+
+    ## Uncomment these lines to add an example org
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
+      rules:
+        - allow: [User, Group]
+
+    - type: url
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/react-ssr-template/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: url
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/clean-architecture-app/template.yaml
+      rules:
+        - allow: [Template]
+
+# see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+
+# see https://backstage.io/docs/permissions/getting-started for more on the permission framework
+permission:
+  # setting this to `false` will disable permissions
+  enabled: true
