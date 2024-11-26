@@ -6,6 +6,8 @@
 
 # Others
 
+title: Rancher Developer Portal
+
 rancher:
   # Required - Rancher Server URL
   serverUrl: https://127.0.0.1

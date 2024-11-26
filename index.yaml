@@ -3,13 +3,13 @@ entries:
   rancher-developer-portal:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-11-25T21:39:23.484914Z"
+    created: "2024-11-26T16:23:54.935323Z"
     description: Rancher Developer Portal powered by Backstage
-    digest: 7bccb37bf42d795020d77f69c33eab1d88c64522fb9f0a28070ccc1970bcf737
+    digest: 6240c23ff961063d29b3f519f0abf6ffd53e1c1a97d109a110d084ce133acf21
     icon: https://raw.githubusercontent.com/nwmac/backstage/refs/heads/main/icon.svg
     name: rancher-developer-portal
     type: application
     urls:
     - https://raw.githubusercontent.com/nwmac/backstage/refs/heads/main/charts/rancher-developer-portal-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-25T21:39:23.484566Z"
+generated: "2024-11-26T16:23:54.934874Z"

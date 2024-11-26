@@ -58,3 +58,6 @@ tmp/
 kubeconfig.yaml
 okteto.yaml
 
+app-config-rancher.yaml
+tls-secrets/
+vars.sh

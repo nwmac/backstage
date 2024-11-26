@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+
+const yaml = require('js-yaml');
+const fs   = require('fs');
+const path = require('path');
+
+console.log('Update configuration');
+
+const scriptPath = process.argv[1];
+const baseFolder = path.resolve(scriptPath, '../..');
+
+const appConfig = path.join(baseFolder, 'app-config.yaml')
+const destConfig = path.join(baseFolder, 'app-config-rancher.yaml')
+
+console.log(baseFolder);
+console.log(appConfig);
+
+let config;
+
+// Read the app.config file
+try {
+  config = yaml.load(fs.readFileSync(appConfig, 'utf8'));
+} catch (e) {
+  console.log(e);
+
+  process.exit(-1);
+}
+
+// See if we can read the cert
+const tlsFolder = '/etc/tls-secrets';
+//const tlsFolder = path.join(baseFolder, 'tls-secrets');
+const certFile = path.join(tlsFolder, 'tls.crt');
+const keyFile = path.join(tlsFolder, 'tls.key');
+
+// Patch some values
+const cert = fs.readFileSync(certFile, 'utf8');
+const key = fs.readFileSync(keyFile, 'utf8');
+
+config.app.https = {
+  certificate: {
+    cert,
+    key
+  }
+};
+
+config.backend.https = {
+  certificate: {
+    cert,
+    key
+  }
+};
+
+const podServiceAccount = '/var/run/secrets/kubernetes.io/serviceaccount';
+const caCert = fs.readFileSync(path.join(podServiceAccount, 'ca.crt'), 'utf8');
+//const caCert = fs.readFileSync(path.join(tlsFolder, 'ca.crt'), 'utf8');
+const proxiedUrl = `${ process.env.BS_SERVER_URL }/api/v1/namespaces/${ process.env.BS_NAMESPACE }/services/https:rancher-developer-portal:7007/proxy/`
+
+config.app.title = process.env.BS_TITLE || 'Rancher Developer Portal' ;
+config.app.baseUrl = proxiedUrl;
+config.backend.baseUrl = proxiedUrl;
+config.backend.cors.origin = proxiedUrl;
+config.catalog.providers.rancher.local.serverUrl = process.env.BS_SERVER_URL;
+config.catalog.providers.rancher.local.token = process.env.BS_TOKEN;
+
+config.kubernetes = {
+  serviceLocatorMethod: {
+    type: 'multiTenant'
+  },
+  clusterLocatorMethods: [{
+    type: 'config',
+    clusters: [{
+      url: `${ process.env.BS_SERVER_URL }/k8s/clusters/local`,
+      name: 'rancher',
+      authProvider: 'serviceAccount',
+      skipTLSVerify: true,
+      skipMetricsLookup: true,
+      serviceAccountToken: process.env.BS_TOKEN,
+      caData: btoa(caCert)
+    }]
+  }]
+};
+
+// Write out config to a new file
+fs.writeFileSync(destConfig, yaml.dump(config));
