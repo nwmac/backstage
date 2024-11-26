@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
+COPY scripts/* ./
 
 COPY packages packages
 
@@ -23,7 +24,7 @@ ENV PYTHON=/usr/bin/python3
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
-    apt-get install -y --no-install-recommends python3 g++ build-essential && \
+    apt-get install -y --no-install-recommends python3 g++ build-essential vim nano && \
     rm -rf /var/lib/apt/lists/*
 
 # Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
@@ -98,6 +99,9 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
 # Copy the built packages from the build stage
 COPY --from=build --chown=node:node /app/packages/backend/dist/bundle/ ./
 
+COPY --from=build --chown=node:node /app/run.sh ./
+COPY --from=build --chown=node:node /app/update-config ./
+
 # Copy any other files that we need at runtime
 COPY --chown=node:node app-config*.yaml ./
 
@@ -111,4 +115,6 @@ ENV NODE_ENV=production
 ENV NODE_OPTIONS="--no-node-snapshot"
 
 #CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
-CMD ["node", "packages/backend", "--config", "app-config.yaml"
+#CMD ["node", "packages/backend", "--config", "app-config.yaml"
+
+CMD ["run.sh"]

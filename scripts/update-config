@@ -7,8 +7,8 @@ const path = require('path');
 console.log('Update configuration');
 
 const scriptPath = process.argv[1];
-const baseFolder = path.resolve(scriptPath, '../..');
-
+//const baseFolder = path.resolve(scriptPath, '../..');
+const baseFolder = path.dirname(scriptPath);
 const appConfig = path.join(baseFolder, 'app-config.yaml')
 const destConfig = path.join(baseFolder, 'app-config-rancher.yaml')
 
