@@ -60,7 +60,7 @@ config.app.baseUrl = proxiedUrl;
 config.backend.baseUrl = proxiedUrl;
 config.backend.cors.origin = proxiedUrl;
 config.catalog.providers.rancher.local.serverUrl = process.env.BS_SERVER_URL;
-config.catalog.providers.rancher.local.token = process.env.BS_TOKEN;
+config.catalog.providers.rancher.local.token = process.env.BS_K8S_TOKEN;
 config.auth.providers.rancher.serverUrl = process.env.BS_SERVER_URL;
 
 config.kubernetes = {
@@ -75,7 +75,7 @@ config.kubernetes = {
       authProvider: 'serviceAccount',
       skipTLSVerify: true,
       skipMetricsLookup: true,
-      serviceAccountToken: process.env.BS_TOKEN,
+      serviceAccountToken: process.env.BS_K8S_TOKEN,
       caData: btoa(caCert)
     }]
   }]
