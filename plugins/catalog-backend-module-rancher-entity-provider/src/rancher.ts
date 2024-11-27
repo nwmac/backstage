@@ -150,6 +150,8 @@ export class RancherEntityProvider implements EntityProvider {
           }),
         });
       }
+    } else {
+      logger.error(`Rancher catalog provider could not fetch users: ${ r.status } ${ r.statusText }`);
     }
   }
 

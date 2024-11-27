@@ -41,6 +41,11 @@ spec:
             secretKeyRef:
               name: portal-app-config
               key: server-url
+        - name: BS_RANCHER_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: portal-app-config
+              key: rancher-token
         - name: BS_K8S_TOKEN
           valueFrom:
             secretKeyRef:
