@@ -117,4 +117,4 @@ ENV NODE_OPTIONS="--no-node-snapshot"
 #CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
 #CMD ["node", "packages/backend", "--config", "app-config.yaml"
 
-CMD ["run.sh"]
+ENTRYPOINT ["/app/run.sh"]
